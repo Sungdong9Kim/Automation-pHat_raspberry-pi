@@ -17,14 +17,6 @@
 // limitations under the License.
 //
 //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-#include "Python.h"
-
-#include <stdio.h>
-#include <errno.h>
-#include <limites.h>
-#include <assert.h>
-#include <stdlib.h>
-
 #include <signal.h>
 #include <functional>
 #include <string>
