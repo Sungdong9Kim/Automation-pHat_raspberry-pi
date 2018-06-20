@@ -17,6 +17,12 @@
 // limitations under the License.
 //
 //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+#include <stdio.h>
+#include <errno.h>
+#include <limites.h>
+#include <assert.h>
+#include <stdlib.h>
+
 #include <signal.h>
 #include <functional>
 #include <string>
@@ -67,10 +73,10 @@ namespace PH = std::placeholders;
 //---- Modified code for controlling Automation pHat----
 mraa::Gpio *gpio;
 
-gpio_out1 = new mraa::Gpio(OUTPUT_1);
+
 gpio_out2 = new mraa::Gpio(OUTPUT_2);
 gpio_out3 = new mraa::Gpio(OUTPUT_3);
-gpio_out1->dir(mraa:DIR_OUT);
+
 gpio_out2->dir(mraa:DIR_OUT);
 gpio_out3->dir(mraa:DIR_OUT);
 
@@ -4007,7 +4013,12 @@ Output1Resource::Output1Resource(std::string resourceUri)
     // initialize vector rt  Resource Type
     m_var_value_rt.push_back("oic.r.switch.binary");
     m_var_value_value = false; // current value of property "value" Status of the switch
-    }
+
+    gpio_out1 = new mraa::Gpio(OUTPUT_1);
+    gpio_out1->dir(mraa:DIR_OUT);
+
+
+  }
 
 /*
 * Destructor code
