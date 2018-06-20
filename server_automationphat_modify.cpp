@@ -64,7 +64,6 @@ namespace PH = std::placeholders;
 
 //---- Modified code for controlling Automation pHat----
 mraa::Gpio *gpio;
-/*
 mraa::Gpio *gpio_out1;
 mraa::Gpio *gpio_out2;
 mraa::Gpio *gpio_out3;
@@ -74,9 +73,6 @@ mraa::Gpio *gpio_in3;
 mraa::Gpio *gpio_rel1;
 mraa::Gpio *gpio_rel2;
 mraa::Gpio *gpio_rel3;
-*/
-
-
 //---------------------------------------------------
 
 class Resource
