@@ -64,7 +64,8 @@ namespace PH = std::placeholders;
 
 //---- Modified code for controlling Automation pHat----
 mraa::Gpio *gpio;
-//mraa::Gpio *gpio_out1;
+/*
+mraa::Gpio *gpio_out1;
 mraa::Gpio *gpio_out2;
 mraa::Gpio *gpio_out3;
 mraa::Gpio *gpio_in1;
@@ -73,23 +74,8 @@ mraa::Gpio *gpio_in3;
 mraa::Gpio *gpio_rel1;
 mraa::Gpio *gpio_rel2;
 mraa::Gpio *gpio_rel3;
+*/
 
-gpio_out3 = new mraa::Gpio(OUTPUT_3);
-gpio_out3->dir(mraa::DIR_OUT);
-
-gpio_in1 = new mraa::Gpio(INPUT_1);
-gpio_in2 = new mraa::Gpio(INPUT_2);
-gpio_in3 = new mraa::Gpio(INPUT_3);
-gpio_in1->dir(mraa::DIR_IN);
-gpio_in2->dir(mraa::DIR_IN);
-gpio_in3->dir(mraa::DIR_IN);
-
-gpio_rel1 = new mraa::Gpio(RELAY_1);
-gpio_rel2 = new mraa::Gpio(RELAY_2);
-gpio_rel3 = new mraa::Gpio(RELAY_3);
-gpio_rel1->dir(mraa::DIR_OUT);
-gpio_rel2->dir(mraa::DIR_OUT);
-gpio_rel3->dir(mraa::DIR_OUT);
 
 //---------------------------------------------------
 
@@ -3104,7 +3090,11 @@ Input1Resource::Input1Resource(std::string resourceUri)
     // initialize vector rt  Resource Type
     m_var_value_rt.push_back("oic.r.switch.binary");
     m_var_value_value = false; // current value of property "value" Status of the switch
-    }
+
+    gpio_in1 = new mraa::Gpio(INPUT_1);
+    gpio_in1->dir(mraa::DIR_IN);
+
+}
 
 /*
 * Destructor code
@@ -3403,7 +3393,10 @@ Input2Resource::Input2Resource(std::string resourceUri)
     // initialize vector rt  Resource Type
     m_var_value_rt.push_back("oic.r.switch.binary");
     m_var_value_value = false; // current value of property "value" Status of the switch
-    }
+
+    gpio_in2 = new mraa::Gpio(INPUT_2);
+    gpio_in2->dir(mraa::DIR_IN);
+}
 
 /*
 * Destructor code
@@ -3702,7 +3695,11 @@ Input3Resource::Input3Resource(std::string resourceUri)
     // initialize vector rt  Resource Type
     m_var_value_rt.push_back("oic.r.switch.binary");
     m_var_value_value = false; // current value of property "value" Status of the switch
-    }
+
+
+    gpio_in3 = new mraa::Gpio(INPUT_3);
+    gpio_in3->dir(mraa::DIR_IN);
+}
 
 /*
 * Destructor code
@@ -5087,7 +5084,10 @@ Output3Resource::Output3Resource(std::string resourceUri)
     // initialize vector rt  Resource Type
     m_var_value_rt.push_back("oic.r.switch.binary");
     m_var_value_value = false; // current value of property "value" Status of the switch
-    }
+
+    gpio_out3 = new mraa::Gpio(OUTPUT_3);
+    gpio_out3->dir(mraa::DIR_OUT);
+}
 
 /*
 * Destructor code
@@ -5621,7 +5621,10 @@ Relay1Resource::Relay1Resource(std::string resourceUri)
     // initialize vector rt  Resource Type
     m_var_value_rt.push_back("oic.r.switch.binary");
     m_var_value_value = false; // current value of property "value" Status of the switch
-    }
+
+    gpio_rel1 = new mraa::Gpio(RELAY_1);
+    gpio_rel1->dir(mraa::DIR_OUT);
+}
 
 /*
 * Destructor code
@@ -6155,7 +6158,11 @@ Relay2Resource::Relay2Resource(std::string resourceUri)
     // initialize vector rt  Resource Type
     m_var_value_rt.push_back("oic.r.switch.binary");
     m_var_value_value = false; // current value of property "value" Status of the switch
-    }
+
+    gpio_rel2 = new mraa::Gpio(RELAY_2);
+    gpio_rel2->dir(mraa::DIR_OUT);
+
+}
 
 /*
 * Destructor code
@@ -6689,7 +6696,10 @@ Relay3Resource::Relay3Resource(std::string resourceUri)
     // initialize vector rt  Resource Type
     m_var_value_rt.push_back("oic.r.switch.binary");
     m_var_value_value = false; // current value of property "value" Status of the switch
-    }
+
+    gpio_rel3 = new mraa::Gpio(RELAY_3);
+    gpio_rel3->dir(mraa::DIR_OUT);
+  }
 
 /*
 * Destructor code
