@@ -74,10 +74,7 @@ mraa::Gpio *gpio_rel1;
 mraa::Gpio *gpio_rel2;
 mraa::Gpio *gpio_rel3;
 
-gpio_out2 = new mraa::Gpio(OUTPUT_2);
 gpio_out3 = new mraa::Gpio(OUTPUT_3);
-
-gpio_out2->dir(mraa::DIR_OUT);
 gpio_out3->dir(mraa::DIR_OUT);
 
 gpio_in1 = new mraa::Gpio(INPUT_1);
@@ -4552,7 +4549,11 @@ Output2Resource::Output2Resource(std::string resourceUri)
     // initialize vector rt  Resource Type
     m_var_value_rt.push_back("oic.r.switch.binary");
     m_var_value_value = false; // current value of property "value" Status of the switch
-    }
+
+    gpio_out2 = new mraa::Gpio(OUTPUT_2);
+    gpio_out2->dir(mraa::DIR_OUT);
+
+}
 
 /*
 * Destructor code
