@@ -64,6 +64,7 @@ namespace PH = std::placeholders;
 
 //---- Modified code for controlling Automation pHat----
 mraa::Gpio *gpio;
+mraa::Gpio *gpio_out1;
 
 
 gpio_out2 = new mraa::Gpio(OUTPUT_2);
