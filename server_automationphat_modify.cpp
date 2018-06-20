@@ -17,12 +17,6 @@
 // limitations under the License.
 //
 //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-#include <stdio.h>
-#include <errno.h>
-#include <limites.h>
-#include <assert.h>
-#include <stdlib.h>
-
 #include <signal.h>
 #include <functional>
 #include <string>
@@ -30,9 +24,7 @@
 #include <memory>
 #include <exception>
 
-#ifdef MRAA
 #include "mraa.hpp"
-#endif
 
 const int OUTPUT_1 = 29;
 const int OUTPUT_2 = 32;
